@@ -78,6 +78,7 @@ plugins=(
 	heroku
 	history
 	httpie
+	isodate
 	iterm2
 	zsh-syntax-highlighting
 	zsh-autosuggestions
@@ -136,11 +137,6 @@ alias ping="ping -c 5" # limit ping with 5 tries
 alias ducks="_ du -sh * 2>/dev/null | sort -nr | head -10" # found biggest 10 files
 alias tailp="f(){ tail -f /proc/""/fd/1; unset -f f ; }; f" # see logs of a process
 alias diff='colordiff -y -s -w'
-alias isodate="date +%Y-%m-%dT%H:%M:%S%z"
-alias isodate_utc="date -u +%Y-%m-%dT%H:%M:%SZ"
-alias isodate_basic="date -u +%Y%m%dT%H%M%SZ"
-alias unixstamp="date +%s"
-alias date_locale="date +"%c""
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/frani/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
