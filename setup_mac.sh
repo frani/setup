@@ -7,7 +7,7 @@
 ## Installing CASK apps
 brew install --cask iterm2 firefox google-chrome spotify ngrok figma discord transmission
 ## Installing CLI apps
-brew install go httpie htop tldr awscli node
+brew install go httpie htop tldr awscli node tree
 npm i -g n
 # VS Code
 brew install --cask visual-studio-code
@@ -21,7 +21,6 @@ brew tap mongodb/brew
 brew install mongodb-community
 brew install --cask mongodb-compass
 # docker
-brew install docker docker-compose docker-machine
 brew install --cask docker
 # nano highlights
 git clone git://github.com/serialhex/nano-highlight.git ~/.nano
