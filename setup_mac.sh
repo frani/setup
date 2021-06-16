@@ -38,6 +38,13 @@ brew install --cask font-powerline-symbols
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1 &&
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+# setup defaults configs
+defaults import com.apple.dock ./defaults/dock.plist
+defaults import com.apple.finder ./defaults/finder.plist
+defaults import com.apple.menuextra.clock ./defaults/menuextra.clock.plist
+defaults write "Apple Global Domain" "_HIHideMenuBar" -float "1"
+defaults write "Apple Global Domain" "AppleAccentColor" -float "-1"
+
 # heroku
 brew tap heroku/brew && brew install heroku
 heroku autocomplete
