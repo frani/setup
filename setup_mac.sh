@@ -4,6 +4,9 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y &&
 
+## Clone Set_up repo
+git clone https://github.com/frani/setup_macbook.git setup_macbook_repo
+
 ## Installing CASK apps
 brew install --cask iterm2 firefox google-chrome spotify ngrok figma discord transmission
 ## Installing CLI apps
@@ -24,11 +27,11 @@ brew install --cask mongodb-compass
 brew install --cask docker
 # nano highlights
 git clone git://github.com/serialhex/nano-highlight.git ~/.nano
-cp .nanorc -O ~/.nanorc
+cp ./setup_macbook_repo/.nanorc -O ~/.nanorc
 
 ## Install Ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-cp ./zshrc ~/.zshrc
+cp cloned/./zshrc ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -39,9 +42,9 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # setup defaults configs
-defaults import com.apple.dock ./defaults/dock.plist
-defaults import com.apple.finder ./defaults/finder.plist
-defaults import com.apple.menuextra.clock ./defaults/menuextra.clock.plist
+defaults import com.apple.dock ./setup_macbook_repo/defaults/dock.plist
+defaults import com.apple.finder ./setup_macbook_repo/defaults/finder.plist
+defaults import com.apple.menuextra.clock ./setup_macbook_repo/defaults/menuextra.clock.plist
 defaults write "Apple Global Domain" "_HIHideMenuBar" -float "1"
 defaults write "Apple Global Domain" "AppleAccentColor" -float "-1"
 
@@ -50,14 +53,21 @@ brew tap heroku/brew && brew install heroku
 heroku autocomplete
 printf "$(heroku autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc
 
+defaults import com.googlecode.iterm2 ./setup_macbook_repo/defaults/iterm2.plist
+
 chsh -s $(command -v zsh)
 
-echo "\n\n\n"
+echo ""
+echo ""
+echo ""
 echo "# # # # # # # # # # # # # # # # # #"
 echo "#		Setup Completed		#"
 echo "# # # # # # # # # # # # # # # # # #"
 echo ""
-echo "Now open iterm2 and follow next instructions:"
+echo "Now open iterm2 and enjoy your day."
+echo ""
+echo ""
+echo "In case your iterm2 was not correctly config, follow next instructions:"
 echo "\t- Press 'cmd + i' and go to 'Colors -> Colors Presets...' and choose 'SpaceGray'"
 echo "\t- Press 'cmd + i' and go to 'Text -> Change Font' and select PowerlineSymbolz"
 echo ""
