@@ -14,11 +14,8 @@ brew install go httpie htop tldr awscli node tree
 npm i -g n
 # VS Code
 brew install --cask visual-studio-code
-code --install-extension yummygum.city-lights-icon-vsc
-code --install-extension yummygum.city-lights-them
-code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension esbenp.prettier-vscode
+## installing extensions vs code
+while read -r line; do code --install-extension $line ; done < vscode-list-extensions.txt 
 # mongodb
 brew tap mongodb/brew
 brew install mongodb-community

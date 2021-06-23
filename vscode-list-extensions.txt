@@ -1,0 +1,10 @@
+dbaeumer.vscode-eslint
+dsznajder.es7-react-js-snippets
+esbenp.prettier-vscode
+HookyQR.beautify
+JuanBlanco.solidity
+ms-python.python
+ms-python.vscode-pylance
+ms-toolsai.jupyter
+Yummygum.city-lights-icon-vsc
+yummygum.city-lights-theme
