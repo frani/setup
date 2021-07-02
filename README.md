@@ -4,7 +4,8 @@ just run next command
 ```
 mkdir setup_macbook
 cd setup_macbook
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/frani/setup_macbook/master/setup_macbook.sh)"
+git clone https://github.com/frani/setup_macbook
+/setup_macbook.sh
 ``` 
 
 
