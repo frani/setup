@@ -3,9 +3,8 @@
 ## Installing BREW package mananger
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y &&
-
-## Clone Set_up repo
-git clone https://github.com/frani/setup_macbook.git setup_macbook_repo
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "/Users/$whoami/.zprofile"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## Installing CASK apps
 brew install --cask iterm2 firefox google-chrome spotify ngrok figma discord transmission
@@ -24,11 +23,10 @@ brew install --cask mongodb-compass
 brew install --cask docker
 # nano highlights
 git clone git://github.com/serialhex/nano-highlight.git ~/.nano
-cp ./setup_macbook_repo/.nanorc -O ~/.nanorc
+cp ./.nanorc ~/.nanorc
 
 ## Install Ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-cp cloned/./zshrc ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -38,10 +36,13 @@ brew install --cask font-powerline-symbols
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1 &&
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+cp ./.zshrc ~/.zshrc
+source ~/.zshrc
+
 # setup defaults configs
-defaults import com.apple.dock ./setup_macbook_repo/defaults/dock.plist
-defaults import com.apple.finder ./setup_macbook_repo/defaults/finder.plist
-defaults import com.apple.menuextra.clock ./setup_macbook_repo/defaults/menuextra.clock.plist
+defaults import com.apple.dock ./defaults/dock.plist ; killall Dock
+defaults import com.apple.finder ./defaults/finder.plist
+defaults import com.apple.menuextra.clock ./defaults/menuextra.clock.plist
 defaults write "Apple Global Domain" "_HIHideMenuBar" -float "1"
 defaults write "Apple Global Domain" "AppleAccentColor" -float "-1"
 
@@ -50,7 +51,7 @@ brew tap heroku/brew && brew install heroku
 heroku autocomplete
 printf "$(heroku autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc
 
-defaults import com.googlecode.iterm2 ./setup_macbook_repo/defaults/iterm2.plist
+defaults import com.googlecode.iterm2 ./defaults/iterm2.plist
 
 chsh -s $(command -v zsh)
 
