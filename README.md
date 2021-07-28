@@ -2,9 +2,9 @@
 just run next command
 
 ```
-mkdir setup_macbook
-cd setup_macbook
 git clone https://github.com/frani/setup_macbook
+cd setup_macbook
+chmod +x setup_mac.sh
 /setup_macbook.sh
 ``` 
 
