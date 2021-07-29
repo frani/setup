@@ -3,7 +3,7 @@
 ## Installing BREW package mananger
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y &&
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "/Users/$whoami/.zprofile"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "/Users/$(whoami)/.zprofile"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## Installing CASK apps
