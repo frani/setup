@@ -75,11 +75,13 @@ plugins=(
 	aws
 	docker
 	docker-compose
+	dotenv
 	heroku
 	history
 	httpie
 	isodate
 	iterm2
+	yarn
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )
