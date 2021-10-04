@@ -10,8 +10,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install --cask iterm2 firefox google-chrome spotify ngrok figma discord transmission visual-studio-code signal postman
 
 ## Installing CLI apps
-brew install go httpie htop tldr awscli node tree
-npm i -g n
+brew install go httpie htop tldr awscli n tree
+n lts
 
 ## installing extensions vs code
 while read -r line; do code --install-extension $line ; done < vscode-list-extensions.txt 
