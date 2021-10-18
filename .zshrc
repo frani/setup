@@ -84,7 +84,9 @@ plugins=(
 	yarn
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-)
+	ipfs
+ 	pipenv
+ )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,10 +124,6 @@ alias cp="cp -R"
 alias ipe="curl ipinfo.io/ip"
 alias ipi="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*'| grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
-# default python 3
-alias python="python3"
-alias pip="pip3"
-
 # grep-in
 alias lg="l | grep"
 alias psaux="ps aux | grep "
@@ -138,7 +136,6 @@ alias gs="gsb" # for github plugin
 alias ping="ping -c 5" # limit ping with 5 tries
 alias ducks="_ du -sh * 2>/dev/null | sort -nr | head -10" # found biggest 10 files
 alias tailp="f(){ tail -f /proc/""/fd/1; unset -f f ; }; f" # see logs of a process
-alias diff='colordiff -y -s -w'
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/frani/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
