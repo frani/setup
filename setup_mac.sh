@@ -23,9 +23,10 @@ brew install --cask mongodb-compass
 
 # docker
 brew install --cask docker
-# nano highlights
-git clone git://github.com/serialhex/nano-highlight.git ~/.nano
-cp ./.nanorc ~/.nanorc
+# setup vim 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 ## Install Ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -38,6 +39,7 @@ brew install --cask font-powerline-symbols
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1 &&
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+cp ./.vimrc ~/.vimrc
 cp ./.zshrc ~/.zshrc
 source ~/.zshrc
 
