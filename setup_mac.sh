@@ -57,6 +57,7 @@ printf "$(heroku autocomplete:script zsh)" >> ~/.zshrc; source ~/.zshrc
 
 defaults import com.googlecode.iterm2 ./defaults/iterm2.plist
 
+launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 chsh -s $(command -v zsh)
 
 echo ""
