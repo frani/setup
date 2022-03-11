@@ -7,6 +7,6 @@ Often that person is myself in a close future (frequenly break or reset my compu
 Run next script and choose which system do you want to setup:
 - macos or raspberry
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/frani/setup/main/setup.sh)"
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/frani/setup/main/setup.sh)"
 ``` 
 
