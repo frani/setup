@@ -1,6 +1,6 @@
 # About
-I'm sharing this next scripts that usually use to setup my computer. Often that persosn is me in a close future (frequenly break or reset my computer)
-
+I'm sharing this next scripts that usually use to setup my computer.
+Often that person is myself in a close future (frequenly break or reset my computer)
 
 # Run it
 
