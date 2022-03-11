@@ -5,15 +5,12 @@ apt upgrade
 apt dist-upgrade
 apt autoremove
 
-## Installing CASK apps
-brew install --cask iterm2 firefox google-chrome spotify ngrok figma discord transmission visual-studio-code signal postman
-
 ## Installing CLI apps
 # Install N (nodejs version manager) and latest nodejs
 curl -sL https://git.io/n-install | bash -s -- -q
 npm i -g yarn
 
-apt install zsh go httpie tldr awscli n vim 
+apt install zsh go httpie tldr awscli n vim transmission
 
 # setup vim 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
