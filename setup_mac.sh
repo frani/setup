@@ -1,5 +1,21 @@
 #!/bin/bash
 
+## Check user has sudo permissions
+if ! sudo -v; then
+    echo "🚫 User does not have sudo permissions"
+    exit 1
+fi
+
+## Enable TouchID for sudo
+if grep -q pam_tid.so /etc/pam.d/sudo; then
+    echo "👌 Touch ID sudo already set up"
+else
+    sudo sed -i '' '2i\
+auth       sufficient     pam_tid.so
+' /etc/pam.d/sudo
+    echo "👍 Touch ID sudo added"
+fi
+
 ## Installing BREW package mananger
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" -y &&
